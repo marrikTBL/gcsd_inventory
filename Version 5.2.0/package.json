@@ -1,0 +1,29 @@
+{
+  "name": "inventory",
+  "version": "5.1.0",
+  "description": "GCSD Equipment Inventory",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-win": "set ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES=true && electron-builder --win"
+  },
+  "author": "Brad Kiker",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "overrides": {
+    "glob": "^10.4.5",
+    "rimraf": "^5.0.0"
+  },
+  "build": {
+    "appId": "com.gcsd.inventory",
+    "productName": "INVENTORY",
+    "asar": false,
+    "win": {
+      "target": "dir",
+      "icon": "icon.ico"
+    }
+  }
+}
