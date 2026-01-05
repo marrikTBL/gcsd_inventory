@@ -1,0 +1,3 @@
+@echo off
+echo Starting GCSD Inventory Management System...
+call npm start
