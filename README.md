@@ -46,8 +46,7 @@ All data is automatically saved to `GCSD-DATA.json` in the same folder as the EX
 
 ## Cloud Backup & Update
 
-**Backup:** Click the "☁️ Backup" button to backup your data to the network share:
-`\\192.168.0.249\Inventory\Inventory-Backup`
+**Backup:** Click the "☁️ Backup" button to backup your data to a network.
 
 Each backup creates a timestamped file like: `GCSD-DATA_2024-01-05_14-30.json`
 
