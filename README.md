@@ -1,47 +1,92 @@
-# GCSD Inventory Management System - Desktop App
+# GCSD Inventory Management System
 
-## Version 6.1.0-BETA
+**Version:** 6.1.0-BETA
 
-This is a standalone desktop application for the Greene County Sheriff's Department Equipment Inventory Management System.
+**Platform:** Cross-platform (optimized for Windows)
 
-## Quick Install (3 Steps)
+The **GCSD Inventory Management System** is a robust, Electron-based desktop application designed for high-performance inventory tracking. It features a sophisticated local and cloud data management system, integrated update capabilities, and specialized performance optimizations for handling large datasets.
 
-1. **Install Node.js** from https://nodejs.org (LTS version)
-2. **Double-click `BUILD.bat`** - Wait for it to complete
-3. **Double-click `SETUP.bat`** - Installs to Documents\INVENTORY with desktop shortcut
+---
 
-Done! Click the "INVENTORY" icon on your desktop to run.
+## 🚀 Key Features
 
-## What Gets Installed
+### 📦 Data Management
 
-- **Location:** `Documents\INVENTORY\INVENTORY.exe`
-- **Desktop shortcut:** INVENTORY (with badge icon)
-- **Data file:** `Documents\INVENTORY\GCSD-DATA.json`
+* **Local Storage:** Automatically persists data to `GCSD-DATA.json` within the application directory.
+* **Cloud Backup & Sync:** Integrated support for network-based backups. It connects to a central repository for seamless data sharing and redundancy.
+* **Validation:** Built-in data integrity checks to ensure that loaded files match the expected schema before processing.
 
-## Backup
+### 🔄 Update & Maintenance System
 
-Your data is saved in `GCSD-DATA.json` next to the EXE. To backup:
-1. Copy `GCSD-DATA.json` to a safe location
-2. To restore, replace the file with your backup
+* **Automated Updates:** Features a dedicated update module to check for, download, and apply new versions (ZIP-based).
+* **Progress Tracking:** Real-time download progress reporting via the UI.
+* **Rollback Capability:** Includes a version management system that allows users to view available backups and roll back to previous stable versions if necessary.
 
-## Running Without Installing
+### ⚡ Performance Optimizations
 
-If you just want to test without installing:
-1. Double-click `INSTALL.bat` (installs dependencies)
-2. Double-click `START.bat` (runs the app)
+The application is configured to handle intensive operations by leveraging hardware acceleration:
 
-## Features
+* **Increased Memory:** Allocated up to **4GB** of JS heap size (`--max-old-space-size=4096`).
+* **GPU Acceleration:** Utilizes GPU rasterization and zero-copy transfers for a smooth UI experience.
+* **V8 Optimization:** Uses V8 cache options and bypassed "heat checks" for faster script execution.
 
-- ✅ **Automatic Updates** from GitHub releases
-- ✅ Optimized launch with loading box & status messages
-- ✅ Auto-save to local file (no browser dependency)
-- ✅ Cloud backup with timestamped filenames (easy to identify)
-- ✅ Cloud update loads most recent backup
-- ✅ Organized button layout (Local & Cloud boxes)
-- ✅ Last cloud backup date/time always visible
-- ✅ Works offline
-- ✅ Shows backup status indicators in footer
-- ✅ Desktop shortcut with badge icon
-- ✅ All features from browser version
+---
 
-## Designed by Brad Kiker
+## 🛠 Technical Specifications
+
+| Feature | Specification |
+| --- | --- |
+| **Framework** | Electron |
+| **Runtime** | Node.js |
+| **Window Size** | 1400x900 (Min: 1024x700) |
+| **Data Format** | JSON (UTF-8) |
+| **Background** | Hex #1a1a1a (Dark Mode) |
+| **Security** | Context Isolation enabled; Node Integration disabled in renderer. |
+
+---
+
+## 📂 File Structure
+
+* `main.js`: The entry point of the application, managing window lifecycle, IPC communication, and hardware flags.
+* `preload.js`: The bridge between the main process and the web environment.
+* `index.html`: The primary UI structure.
+* `updater.js`: A specialized module for handling versioning, downloads, and file extraction.
+* `GCSD-DATA.json`: Local database file.
+
+---
+
+## 🖥 Hardware Requirements
+
+To ensure the performance optimizations function correctly, the system should have:
+
+1. **Network Access:** Connectivity to the desired subnet for cloud backup features.
+2. **GPU Support:** A dedicated or integrated GPU that supports hardware acceleration for optimal rendering.
+3. **RAM:** At least 8GB recommended (due to the 4GB allocation for the application process).
+
+---
+
+## ⌨️ Development & Setup
+
+To run the application in a development environment:
+
+1. **Install Dependencies:**
+```bash
+npm install
+
+```
+
+
+2. **Start Application:**
+```bash
+npm start
+
+```
+
+
+
+> [!IMPORTANT]
+> The application searches for an `updater.js` file in multiple locations (local folder, app path, and resource directory). Ensure this file is present for update and rollback functionality to work.
+
+---
+
+**Would you like me to create the `preload.js` or `updater.js` logic to complement this main process file?**
