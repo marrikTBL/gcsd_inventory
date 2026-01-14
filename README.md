@@ -65,23 +65,63 @@ To ensure the performance optimizations function correctly, the system should ha
 
 ---
 
-## ⌨️ Development & Setup
+## 🛠 Development & Setup
 
-To run the application in a development environment:
+To set up the GCSD Inventory Management System for development or to compile it into a production-ready executable, follow the steps below.
+
+### ⚙️ Prerequisites
+
+* **Node.js:** Ensure you have the latest LTS version installed.
+* **Git:** Required to clone the repository if hosted remotely.
+* **Network Access:** A connection to `\\192.168.0.249` is required for cloud backup and restoration features.
+* **Permissions:** You must have write access to the application directory to generate and save the `GCSD-DATA.json` file.
+
+### 🏗 Installation & Local Development
 
 1. **Install Dependencies:**
+Download the project and install the required Electron and Node.js packages.
 ```bash
 npm install
 
 ```
 
 
-2. **Start Application:**
+2. **Run in Development Mode:**
+Launch the application with the hardware acceleration and memory flags (4GB JS heap) enabled.
 ```bash
 npm start
 
 ```
 
+
+
+### 📦 The Build Process
+
+Since this application includes specialized performance flags and a dedicated updater, the build process must package the `updater.js` and `icon.png` files correctly.
+
+1. **Configure Environment:**
+Ensure the `updater.js` file is located in the root directory, as the application searches for it at startup to enable version control.
+2. **Package the Application:**
+Use `electron-builder` or `electron-packager` to create the executable. The build command typically looks like this:
+```bash
+npm run build
+
+```
+
+
+
+### ✅ Production Verification
+
+Once the application is packaged, follow these steps to verify the production environment:
+
+* **Setup Script (`setup.bat`):** Before the first run, execute `setup.bat` to ensure all directory permissions are set, network paths to the cloud backup's are mapped, and any existing legacy instances of the application are cleared.
+* **Data Path:** Verify that the app correctly identifies the data path. In a packaged state, it will look for `GCSD-DATA.json` in the same directory as the executable (`process.execPath`).
+* **Memory Allocation:** Ensure the production build is correctly applying the `--max-old-space-size=4096` flag to handle large inventory datasets.
+* **Updater Integration:** Confirm that `updater.js` is present in the `resources` folder so that "Check for Updates" and "Rollback" features are functional.
+
+---
+
+**Would you like me to write the code for the `setup.bat` file to automate these environment checks and network mappings?**
 
 
 > [!IMPORTANT]
