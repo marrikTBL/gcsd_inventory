@@ -73,7 +73,7 @@ To set up the GCSD Inventory Management System for development or to compile it 
 
 * **Node.js:** Ensure you have the latest LTS version installed.
 * **Git:** Required to clone the repository if hosted remotely.
-* **Network Access:** A connection to `\\192.168.0.249` is required for cloud backup and restoration features.
+* **Network Access:** A connection to desired share is required for backup and restoration features.
 * **Permissions:** You must have write access to the application directory to generate and save the `GCSD-DATA.json` file.
 
 ### 🏗 Installation & Local Development
