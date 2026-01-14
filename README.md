@@ -108,8 +108,6 @@ npm run build
 
 ```
 
-
-
 ### ✅ Production Verification
 
 Once the application is packaged, follow these steps to verify the production environment:
@@ -120,13 +118,7 @@ Once the application is packaged, follow these steps to verify the production en
 * **Updater Integration:** Confirm that `updater.js` is present in the `resources` folder so that "Check for Updates" and "Rollback" features are functional.
 
 ---
-
-**Would you like me to write the code for the `setup.bat` file to automate these environment checks and network mappings?**
-
-
 > [!IMPORTANT]
 > The application searches for an `updater.js` file in multiple locations (local folder, app path, and resource directory). Ensure this file is present for update and rollback functionality to work.
 
 ---
-
-**Would you like me to create the `preload.js` or `updater.js` logic to complement this main process file?**
