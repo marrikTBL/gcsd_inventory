@@ -1,23 +1,8 @@
 # GCSD Inventory Management System - Desktop App
 
-## Version 5.4.0
+## Version 6.1.0-BETA
 
 This is a standalone desktop application for the Greene County Sheriff's Department Equipment Inventory Management System.
-
-### Version 5.4.0 Changes
-- **Automatic Updates** - App now checks for updates from GitHub on startup
-- One-click download and install of new versions
-- Automatic restart after update installation
-- Visual update notification in header when updates are available
-
-### Version 5.0 Changes
-- Comprehensive error checking throughout application
-- Improved data validation on load/save operations
-- Better error messages for cloud backup failures (network issues, access denied, etc.)
-- Application crash handling and recovery
-- Null safety checks on all equipment operations
-- IPC communication error handling wrapper
-- Enhanced logging for troubleshooting
 
 ## Quick Install (3 Steps)
 
@@ -26,42 +11,6 @@ This is a standalone desktop application for the Greene County Sheriff's Departm
 3. **Double-click `SETUP.bat`** - Installs to Documents\INVENTORY with desktop shortcut
 
 Done! Click the "INVENTORY" icon on your desktop to run.
-
-## Automatic Updates
-
-The application automatically checks for updates from GitHub when it starts. When an update is available:
-
-1. An **"Update!"** button appears in the header (highlighted in orange)
-2. Click it to see update details and release notes
-3. Click **"Download & Install"** to update
-4. The app will restart automatically with the new version
-
-You can also manually check for updates by clicking the **"Updates"** button in the header at any time.
-
-**Update Source:** https://github.com/marrikTBL/gcsd_inventory/releases
-
-## Data Storage
-
-All data is automatically saved to `GCSD-DATA.json` in the same folder as the EXE. Every change you make is instantly saved.
-
-## Cloud Backup & Update
-
-**Backup:** Click the "☁️ Backup" button to backup your data to the network share:
-`\\192.168.0.249\Inventory\Inventory-Backup`
-
-Each backup creates a timestamped file like: `GCSD-DATA_2024-01-05_14-30.json`
-
-**Update:** Click the "☁️ Update" button to load the most recent backup from the cloud.
-
-The Cloud box always shows the last backup date/time.
-
-Buttons are organized into labeled boxes:
-- **Local** box: Export and Import (for local file backups)
-- **Cloud** box: Backup and Update (for network share)
-
-The footer shows cloud backup status:
-- 🟢 **CLOUD BACKUP** = Backup exists on network
-- 🔴 **CLOUD BACKUP** = No backup found or network unavailable
 
 ## What Gets Installed
 
